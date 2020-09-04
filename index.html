@@ -68,6 +68,14 @@
 
       <header class="entry-header">
         
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/08/27/StudyofMySql/">MySql学习</a>
+    </h1>
+  
+
+        
         <div class="comments-link">
             
             <a href="javascript:void(0);" data-url="http://yoursite.com/2020/08/27/StudyofMySql/" data-id="ckenurs8e0004ncttgyu2ocuk" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
@@ -76,35 +84,56 @@
 
     <div class="entry-content">
       
-        <h2 id="title-MySql学习"><a href="#title-MySql学习" class="headerlink" title="title:MySql学习"></a>title:MySql学习</h2><h1 id="一、如何使用终端操作数据库"><a href="#一、如何使用终端操作数据库" class="headerlink" title="一、如何使用终端操作数据库"></a>一、如何使用终端操作数据库</h1><h2 id="1-查询数据库服务器中所有的数据库"><a href="#1-查询数据库服务器中所有的数据库" class="headerlink" title="1.查询数据库服务器中所有的数据库"></a>1.查询数据库服务器中所有的数据库</h2><p>-&gt;show databases;<br><img src="/studyofMySql/1.png" alt=""></p>
-<h2 id="2-在数据库服务器中创建数据库"><a href="#2-在数据库服务器中创建数据库" class="headerlink" title="2.在数据库服务器中创建数据库"></a>2.在数据库服务器中创建数据库</h2><p>-&gt;crete database sqlname;<br><img src="/studyofMySql/2.png" alt=""></p>
+        <h1 id="一、如何使用终端操作数据库"><a href="#一、如何使用终端操作数据库" class="headerlink" title="一、如何使用终端操作数据库"></a>一、如何使用终端操作数据库</h1><h2 id="1-查询数据库服务器中所有的数据库"><a href="#1-查询数据库服务器中所有的数据库" class="headerlink" title="1.查询数据库服务器中所有的数据库"></a>1.查询数据库服务器中所有的数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;show databases;</span><br></pre></td></tr></table></figure>
+<p><img src="/studyofMySql/1.png" alt=""></p>
+<h2 id="2-在数据库服务器中创建数据库"><a href="#2-在数据库服务器中创建数据库" class="headerlink" title="2.在数据库服务器中创建数据库"></a>2.在数据库服务器中创建数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;crete database sqlname;</span><br></pre></td></tr></table></figure>
+<p><img src="/studyofMySql/2.png" alt=""></p>
 <h2 id="3-选中一个数据库进行操作"><a href="#3-选中一个数据库进行操作" class="headerlink" title="3.选中一个数据库进行操作"></a>3.选中一个数据库进行操作</h2><ol>
-<li><p>先选中：-&gt;use sqlname; </p>
+<li><p>先选中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;use sqlname;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>检索信息：-&gt;SELECT <em>what_to_select</em></p>
-<pre><code>-&gt;FROM *which_table*
--&gt;WHERE *conditions_to_satisfy;*
-</code></pre><p><strong>注：</strong>what_to_select指出你想要看到的内容，可以是列的一个表，或”*“表示“所有的列”。which_table指出你想要从其检索数据的表。WHERE子句是可选项，如果选择该项，conditions_to_satisfy指定行必须满足的检索条件。<br>查询语句：select * from tablename;<br><del>MySQL提供了几个函数，可以用来计算日期，例如，计算年龄或提取日期部分。</del></p>
-</li>
-<li><p>查看数据表：-&gt;show tables;</p>
-</li>
-<li><p>创建一个数据表：-&gt;CREATE TABLE people();表中分割用“,”;<br><img src="/studyofMySql/3.png" alt=""><br><img src="/studyofMySql/4.png" alt=""></p>
-</li>
-<li><p>查看数据表的具体结构：-&gt;DESCRIBE tablename;<br><img src="/studyofMySql/5.png" alt=""></p>
-</li>
-<li><p>往数据表中添加记录：-&gt;INSERT INTO tablename</p>
-<pre><code>-&gt; VALUES(&apos;王一&apos;,&apos;男&apos;,&apos;2005.01.01&apos;);
-</code></pre><p><img src="/studyofMySql/6.png" alt=""><br><img src="/studyofMySql/7.png" alt=""><br><strong>注：</strong>这里字符串和日期值均为引号扩起来的字符串。<br><em>将文本文件装载到表中：</em><br>eg:将路径下的pet.txt文本文件装载到表pet中：<br>-&gt;LOAD DATA LOCAL INFILE ‘/path/pet.txt’ INTO TABLE pet;<br>其中默认的列值分隔符和行尾标记是定位符（tab）和换行符(\r\n)。<br><strong>注：</strong>想要一次增加一个新记录，可以使用INSERT语句。</p>
-</li>
-<li><p>常用数据类型<br>数值：TINYINT,SMALLINT,MEDIUMINT,INT,BIGINT,FLOAT,DOUBLE,DECIMAL…<br>日期/时间：DATE,TIME,YEAR,DATETIME,TIMESTAMP…<br>字符串（字符）：CHAR,VARCHAR,TINYBLOB,TINYTEXT,BLOB,TEXT,MEDIUMBLOB,MEDIUMTEXT,LONGBLOB,LONGTEXT…<br>日期选择按照格式，数值、字符（串）选择按照大小。</p>
-</li>
-<li><p>删除数据：-&gt;DELETE FROM tablename WHERE name=’王一’;<br><img src="/studyofMySql/8.png" alt=""></p>
-</li>
-<li><p>修改数据：UPDATE,UPDATE只更改有问题的记录，不需要重新装载数据库表。<br>eg: -&gt;UPDATE pet SET birth = ‘1989-08-31’ WHERE name = ‘Bowser’;</p>
-</li>
-<li><p>模式匹配：SQL模式匹配允许你使用“_”匹配任何单个字符，而“%”匹配任意数目字符(包括零字符)。 SQL的模式默认是忽略大小写的,注意使用SQL模式时，不能使用=或!=；而应使用LIKE或NOT LIKE比较操作符。<br>eg:-&gt;mysql&gt; SELECT <em> FROM pet WHERE name LIKE ‘b%’;(找出以“b”开头的名字)<br>-&gt;SELECT </em> FROM pet WHERE name LIKE ‘%fy’;(找出以“fy”结尾的名字)<br>-&gt;SELECT <em> FROM pet WHERE name LIKE ‘%w%’;(找出包含“w”的名字)<br>-&gt;SELECT </em> FROM pet WHERE name LIKE ‘<strong>_</strong>‘;(找出正好包含5个字符的名字，使用“_”模式字符)<br><strong>扩展：</strong> </p>
+<li><p>检索信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-&gt;SELECT *what_to_select*</span><br><span class="line">-&gt;FROM *which_table*</span><br><span class="line">-&gt;WHERE *conditions_to_satisfy;*</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<p><strong>注：</strong>what_to_select指出你想要看到的内容，可以是列的一个表，或”*“表示“所有的列”。which_table指出你想要从其检索数据的表。WHERE子句是可选项，如果选择该项，conditions_to_satisfy指定行必须满足的检索条件。<br>查询语句：select * from tablename;<br><del>MySQL提供了几个函数，可以用来计算日期，例如，计算年龄或提取日期部分。</del></p>
+<ol start="3">
+<li><p>查看数据表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;show tables;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个数据表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;CREATE TABLE people();表中分割用“,”;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/studyofMySql/3.png" alt=""><br><img src="/studyofMySql/4.png" alt=""></p>
+<ol start="5">
+<li>查看数据表的具体结构：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;DESCRIBE tablename;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/studyofMySql/5.png" alt=""></p>
+<ol start="6">
+<li>往数据表中添加记录：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-&gt;INSERT INTO tablename</span><br><span class="line"> -&gt; VALUES(&apos;王一&apos;,&apos;男&apos;,&apos;2005.01.01&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/studyofMySql/6.png" alt=""><br><img src="/studyofMySql/7.png" alt=""><br><strong>注：</strong>这里字符串和日期值均为引号扩起来的字符串。<br><em>将文本文件装载到表中：</em><br>eg:将路径下的pet.txt文本文件装载到表pet中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;LOAD DATA LOCAL INFILE &apos;/path/pet.txt&apos; INTO TABLE pet;</span><br></pre></td></tr></table></figure></p>
+<p>其中默认的列值分隔符和行尾标记是定位符（tab）和换行符(\r\n)。<br><strong>注：</strong>想要一次增加一个新记录，可以使用INSERT语句。</p>
+<ol start="7">
+<li><p>常用数据类型<br>数值：TINYINT,SMALLINT,MEDIUMINT,INT,BIGINT,FLOAT,DOUBLE,DECIMAL…<br>日期/时间：DATE,TIME,YEAR,DATETIME,TIMESTAMP…<br>字符串（字符）：CHAR,VARCHAR,TINYBLOB,TINYTEXT,BLOB,TEXT,MEDIUMBLOB,MEDIUMTEXT,LONGBLOB,LONGTEXT…<br>日期选择按照格式，数值、字符（串）选择按照大小。</p>
+</li>
+<li><p>删除数据：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;DELETE FROM tablename WHERE name=&apos;王一&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="/studyofMySql/8.png" alt=""></p>
+<ol start="9">
+<li><p>修改数据：UPDATE,UPDATE只更改有问题的记录，不需要重新装载数据库表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;UPDATE pet SET birth = &apos;1989-08-31&apos; WHERE name = &apos;Bowser&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模式匹配：SQL模式匹配允许你使用“_”匹配任何单个字符，而“%”匹配任意数目字符(包括零字符)。 SQL的模式默认是忽略大小写的,注意使用SQL模式时，不能使用=或!=；而应使用LIKE或NOT LIKE比较操作符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-&gt;mysql&gt; SELECT * FROM pet WHERE name LIKE &apos;b%&apos;;(找出以“b”开头的名字)</span><br><span class="line">-&gt;SELECT * FROM pet WHERE name LIKE &apos;%fy&apos;;(找出以“fy”结尾的名字)</span><br><span class="line">-&gt;SELECT * FROM pet WHERE name LIKE &apos;%w%&apos;;(找出包含“w”的名字)</span><br><span class="line">-&gt;SELECT * FROM pet WHERE name LIKE &apos;_____&apos;;(找出正好包含5个字符的名字，使用“\_”模式字符)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong>扩展：</strong> </p>
 <ul>
 <li>‘.’匹配任何单个的字符。</li>
 <li><p>字符类“[…]”匹配在方括号内的任何字符。例如，“[abc]”匹配“a”、“b”或“c”。为了命名字符的范围，使用一个“-”。“[a-z]”匹配任何字母，而“[0-9]”匹配任何数字。</p>
@@ -112,7 +141,7 @@
 <li><p>“*”匹配零个或多个在它前面的字符。例如，“x*”匹配任何数量的“x”字符，“[0-9]*”匹配任何数量的数字，而“.*”匹配任何数量的任何字符。</p>
 </li>
 </ul>
-<h2 id="4-退出数据库服务器"><a href="#4-退出数据库服务器" class="headerlink" title="4.退出数据库服务器"></a>4.退出数据库服务器</h2><p>-&gt;exit;</p>
+<h2 id="4-退出数据库服务器"><a href="#4-退出数据库服务器" class="headerlink" title="4.退出数据库服务器"></a>4.退出数据库服务器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-&gt;exit;</span><br></pre></td></tr></table></figure>
 <h2 id="5-建表约束"><a href="#5-建表约束" class="headerlink" title="5.建表约束"></a>5.建表约束</h2><ol>
 <li><p>主键约束（primary key）：唯一确定一张表中的一条记录，即通过给某个字段添加约束，就可以使得该字段不重复且不为空。<br>联合主键约束：只要联合起来的主键加起来不重复即可。</p>
 </li>
@@ -135,14 +164,17 @@
 <li><p>第三范式：必须先满足第二范式，除开主键列的其他列不能有传递依赖关系。</p>
 </li>
 </ol>
-<h1 id="二、如何使用可视化工具操作数据库"><a href="#二、如何使用可视化工具操作数据库" class="headerlink" title="二、如何使用可视化工具操作数据库"></a>二、如何使用可视化工具操作数据库</h1><h1 id="三、如何在编程语言中操作数据库"><a href="#三、如何在编程语言中操作数据库" class="headerlink" title="三、如何在编程语言中操作数据库"></a>三、如何在编程语言中操作数据库</h1><h1 id="四、MySql的两个基础对象"><a href="#四、MySql的两个基础对象" class="headerlink" title="四、MySql的两个基础对象"></a>四、MySql的两个基础对象</h1><h2 id="1-MySqlConnection对象：用于和数据库建立连接，它接收一个连接用的字符串，返回一个MySqlConnection对象。"><a href="#1-MySqlConnection对象：用于和数据库建立连接，它接收一个连接用的字符串，返回一个MySqlConnection对象。" class="headerlink" title="1.MySqlConnection对象：用于和数据库建立连接，它接收一个连接用的字符串，返回一个MySqlConnection对象。"></a>1.MySqlConnection对象：用于和数据库建立连接，它接收一个连接用的字符串，返回一个MySqlConnection对象。</h2><p><strong>eg:</strong>string connStr = “server = localhost; user = root; database = test; port = 3306; password = ***”<br>MySqlConnection conn = new MySqlConnection(connStr) ;<br>try{conn.Open();}<br>catch(Exception ex){Console.WriteLine(ex.ToString());}</p>
+<h1 id="二、如何使用可视化工具操作数据库"><a href="#二、如何使用可视化工具操作数据库" class="headerlink" title="二、如何使用可视化工具操作数据库"></a>二、如何使用可视化工具操作数据库</h1><h1 id="三、如何在编程语言中操作数据库"><a href="#三、如何在编程语言中操作数据库" class="headerlink" title="三、如何在编程语言中操作数据库"></a>三、如何在编程语言中操作数据库</h1><h1 id="四、MySql的两个基础对象"><a href="#四、MySql的两个基础对象" class="headerlink" title="四、MySql的两个基础对象"></a>四、MySql的两个基础对象</h1><h2 id="1-MySqlConnection对象：用于和数据库建立连接，它接收一个连接用的字符串，返回一个MySqlConnection对象。"><a href="#1-MySqlConnection对象：用于和数据库建立连接，它接收一个连接用的字符串，返回一个MySqlConnection对象。" class="headerlink" title="1.MySqlConnection对象：用于和数据库建立连接，它接收一个连接用的字符串，返回一个MySqlConnection对象。"></a>1.MySqlConnection对象：用于和数据库建立连接，它接收一个连接用的字符串，返回一个MySqlConnection对象。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string connStr = &quot;server = localhost; user = root; database = test; port = 3306; password = ***&quot;</span><br><span class="line">MySqlConnection conn = new MySqlConnection(connStr) ;</span><br><span class="line">try&#123;conn.Open();&#125;</span><br><span class="line">catch(Exception ex)&#123;Console.WriteLine(ex.ToString());&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="2-MySqlCommand对象：用于把SQL语句传送到数据服务器执行-MySqlCommand对象实例化时接收两个参数：SQL语句（命令）以及和数据库的连接，即MySqlConnection连接对象。"><a href="#2-MySqlCommand对象：用于把SQL语句传送到数据服务器执行-MySqlCommand对象实例化时接收两个参数：SQL语句（命令）以及和数据库的连接，即MySqlConnection连接对象。" class="headerlink" title="2. MySqlCommand对象：用于把SQL语句传送到数据服务器执行,MySqlCommand对象实例化时接收两个参数：SQL语句（命令）以及和数据库的连接，即MySqlConnection连接对象。"></a>2. MySqlCommand对象：用于把SQL语句传送到数据服务器执行,MySqlCommand对象实例化时接收两个参数：SQL语句（命令）以及和数据库的连接，即MySqlConnection连接对象。</h2><p>MySqlCommand 对象常用的三个执行方法:</p>
 <ol>
-<li><p>ExecuteReader:调用ExecuteReader方法来查询数据库,返回一个包含着查询结果的MySqlDataReader对象。<br><strong>eg:</strong>MysqlCommand cmd = new MySqlCommand(sql, conn) ;<br>MySqlDataReader rdr = cmd.ExecuteReader();<br>while(rdr.Read())<br>{<br> Console.WriteLine(rdr[0] + “ – “ + rdr[1]) ;<br>}<br>rdr.Close() ;</p>
+<li><p>ExecuteReader:调用ExecuteReader方法来查询数据库,返回一个包含着查询结果的MySqlDataReader对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MysqlCommand cmd = new MySqlCommand(sql, conn) ;</span><br><span class="line">MySqlDataReader rdr = cmd.ExecuteReader();</span><br><span class="line">while(rdr.Read())</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(rdr[0] + &quot; -- &quot; + rdr[1]) ;</span><br><span class="line">&#125;</span><br><span class="line">rdr.Close() ;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>ExecuteNonQuery:调用ExecuteNonQuery来插入和删除数据。<br><strong>eg:</strong>string sql = “INSERT INTO writer value(…)” ;<br>MySqlCommand cmd = new MySqlCommand(sql, conn);<br>cmd.ExecuteNonQuery();</p>
+<li><p>ExecuteNonQuery:调用ExecuteNonQuery来插入和删除数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string sql = &quot;INSERT INTO writer value(...)&quot; ;</span><br><span class="line">MySqlCommand cmd = new MySqlCommand(sql, conn);</span><br><span class="line">cmd.ExecuteNonQuery();</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>ExecuteScalar:仅返回单个值。<br><strong>eg:</strong>sql = “SELECT COUNT(*) FROM writer;”  ;<br>MySqlCommand cmd = new MySqlCommand(sql, conn) ;<br>object result = cmd.ExecuteScalar();<br>if(result != null)<br>{<br> int r = Convert.ToInt32(result) ;<br> …<br>}</p>
+<li><p>ExecuteScalar:仅返回单个值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sql = &quot;SELECT COUNT(*) FROM writer;&quot;  ;</span><br><span class="line">MySqlCommand cmd = new MySqlCommand(sql, conn) ;</span><br><span class="line">object result = cmd.ExecuteScalar();</span><br><span class="line">if(result != null)</span><br><span class="line">&#123;</span><br><span class="line">    int r = Convert.ToInt32(result) ;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><strong>总结：</strong>使用MySQL的基本步骤：</p>
@@ -153,23 +185,43 @@
 </ol>
 <h1 id="五、处理解耦数据"><a href="#五、处理解耦数据" class="headerlink" title="五、处理解耦数据"></a>五、处理解耦数据</h1><p>希望仅在需要连接数据库时才连接。</p>
 <ol>
-<li><p>数据集：DataSet类，一个DataSet对象被实例化后，可以用来处理多个表的数据。<br>eg:DataSet dsCountry;<br>…<br>dsCountry = new DataSet() ;</p>
+<li><p>数据集：DataSet类，一个DataSet对象被实例化后，可以用来处理多个表的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DataSet dsCountry;</span><br><span class="line">...</span><br><span class="line">dsCountry = new DataSet() ;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>数据适配器：数据适配器是连接数据集以及数据库之间的一个接口。数据适配器负责打开、关闭以及管理数据库的连接。 可以通过实例化MySqlDataAdapter对象来创建一个数据适配器。 数据适配器有两个主要的方法：<br>Fill 方法：将数据库中的数据取出，装入数据集<br>Update：方法将数据集中的数据定入数据库中<br>eg:MySqlDataAdapter adapter ;<br>…<br>string sql = “SELECT Code, Name, HeadOfState FROM Country WHERE Continent = ‘North America’” ;<br>adapter = new MySqlDataAdapter(sql, conn) ;</p>
+<li><p>数据适配器：数据适配器是连接数据集以及数据库之间的一个接口。数据适配器负责打开、关闭以及管理数据库的连接。 可以通过实例化MySqlDataAdapter对象来创建一个数据适配器。 数据适配器有两个主要的方法：<br>Fill 方法：将数据库中的数据取出，装入数据集<br>Update：方法将数据集中的数据定入数据库中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">MySqlDataAdapter adapter ;</span><br><span class="line">...</span><br><span class="line">string sql = &quot;SELECT Code, Name, HeadOfState FROM Country WHERE Continent = &apos;North America&apos;&quot; ;</span><br><span class="line">adapter = new MySqlDataAdapter(sql, conn) ;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>命令建造器：可以通过实例化MySqlCommandBuilder来创建一个命令建造器，命令建造器是一个支持对象，命令建造器需要跟数据适配器一起协作。当一个MySqlDataAdapter被创建的时候，通常会给他一个初始的 SELECT 语句。根据这个 SELECT 语句，命令建造器可以判断出相应的 INSERT, UPDATE 和 DELETE 语句的格式。 这样，当你执行Update方法时，数据适配器就能够自动地把更改的数据更新到你的SQL数据库中去。<br>一个命令建造器被创建之后，我们需要生成一些附加的语句提供给它，以用来插入、更新和删除数据。我们在这里只用最简单的一种方法：把适配器传给命令建造器。<br>eg:MySqlCommandBuilder cb = new MySqlCommandBuilder(adapter) ;</p>
+<li><p>命令建造器：可以通过实例化MySqlCommandBuilder来创建一个命令建造器，命令建造器是一个支持对象，命令建造器需要跟数据适配器一起协作。当一个MySqlDataAdapter被创建的时候，通常会给他一个初始的 SELECT 语句。根据这个 SELECT 语句，命令建造器可以判断出相应的 INSERT, UPDATE 和 DELETE 语句的格式。 这样，当你执行Update方法时，数据适配器就能够自动地把更改的数据更新到你的SQL数据库中去。<br>一个命令建造器被创建之后，我们需要生成一些附加的语句提供给它，以用来插入、更新和删除数据。我们在这里只用最简单的一种方法：把适配器传给命令建造器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MySqlCommandBuilder cb = new MySqlCommandBuilder(adapter) ;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>把数据装入数据集:我们使用适配器的 Fill 方法来获取数据库中的数据然后装载入数据集中。 适配器会自动与数据库连接并获取数据。 第二个参数”Country”指明要装载、修改的表。<br>eg:DataSet dsCountry ;<br>…<br>dsCountry = new DataSet() ;<br>…<br>daCountry.Fill(dsCountry, “Country”) ;</p>
+<li><p>把数据装入数据集:我们使用适配器的 Fill 方法来获取数据库中的数据然后装载入数据集中。 适配器会自动与数据库连接并获取数据。 第二个参数”Country”指明要装载、修改的表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DataSet dsCountry ;</span><br><span class="line">...</span><br><span class="line">dsCountry = new DataSet() ;</span><br><span class="line">...</span><br><span class="line">daCountry.Fill(dsCountry, &quot;Country&quot;) ;</span><br></pre></td></tr></table></figure>
 </li>
-<li>更新数据集的数据到数据库:我们使用适配器的 Update 方法将数据集中被改变的数据写回到数据库中。<br>eg:adapter.Update(dsCountry, “Country”) ;</li>
+<li><p>更新数据集的数据到数据库:我们使用适配器的 Update 方法将数据集中被改变的数据写回到数据库中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adapter.Update(dsCountry, &quot;Country&quot;) ;</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<p><strong>总结：</strong>整个过程<br>// 创建连接实例<br>string connStr = “server=localhost;user=root;database=world;port=3306;password=***”;<br>MySqlConnection conn = new MySqlConnection(connStr) ;</p>
-<p>// 使用连接实例以及SELECT语句初始化适配器<br>string sql = “SELECT Code, Name, HeadOfState FROM Country WHERE Continent = ‘North America’” ;<br>adapter = new MySqlDataAdapter (sql, conn) ;</p>
-<p>// 使用适配器初始化命令建造器<br>MySqlCommandBuilder cb = new MySqlCommandBuilder(adapter) ;</p>
-<p>// 创建数据集<br>DataSetCountry = new DataSet();</p>
-<p>// 把数据库中的 Country 表加载进数据集<br>adapter.Fill(DataSetCountry, “Country”) ;</p>
-<p>// 设置控件dataGridView的数据来源<br>dataGridView1.DataSource = DataSetCountry ;<br>dataGridView1.DataMember = “Country” ;</p>
-<p>adapter.Update(DataSetCountry, “Country”) ;</p>
+<p><strong>总结：</strong>整个过程</p>
+<ul>
+<li><p>创建连接实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string connStr = &quot;server=localhost;user=root;database=world;port=3306;password=***&quot;;</span><br><span class="line">MySqlConnection conn = new MySqlConnection(connStr) ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用连接实例以及SELECT语句初始化适配器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string sql = &quot;SELECT Code, Name, HeadOfState FROM Country WHERE Continent = &apos;North America&apos;&quot; ;</span><br><span class="line">adapter = new MySqlDataAdapter (sql, conn) ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用适配器初始化命令建造器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MySqlCommandBuilder cb = new MySqlCommandBuilder(adapter) ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建数据集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataSetCountry = new DataSet();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把数据库中的 Country 表加载进数据集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adapter.Fill(DataSetCountry, &quot;Country&quot;) ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置控件dataGridView的数据来源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dataGridView1.DataSource = DataSetCountry ;</span><br><span class="line">dataGridView1.DataMember = &quot;Country&quot; ;</span><br><span class="line">adapter.Update(DataSetCountry, &quot;Country&quot;) ;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div><!-- .entry-content -->
@@ -196,6 +248,14 @@
 
       <header class="entry-header">
         
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/08/25/StudyofWPF/">WPF的学习</a>
+    </h1>
+  
+
+        
         <div class="comments-link">
             
             <a href="javascript:void(0);" data-url="http://yoursite.com/2020/08/25/StudyofWPF/" data-id="ckenurs7m0000nctt14pthsca" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
@@ -204,7 +264,7 @@
 
     <div class="entry-content">
       
-        <h2 id="title：WPF的学习"><a href="#title：WPF的学习" class="headerlink" title="title：WPF的学习"></a>title：WPF的学习</h2><h1 id="如何添加字体"><a href="#如何添加字体" class="headerlink" title="如何添加字体"></a>如何添加字体</h1>
+        <h1 id="如何添加字体"><a href="#如何添加字体" class="headerlink" title="如何添加字体"></a>如何添加字体</h1>
       
     </div><!-- .entry-content -->
 
@@ -442,11 +502,11 @@
       <ul>
         
           <li>
-            <a href="/2020/08/27/StudyofMySql/">(no title)</a>
+            <a href="/2020/08/27/StudyofMySql/">MySql学习</a>
           </li>
         
           <li>
-            <a href="/2020/08/25/StudyofWPF/">(no title)</a>
+            <a href="/2020/08/25/StudyofWPF/">WPF的学习</a>
           </li>
         
           <li>
