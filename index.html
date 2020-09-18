@@ -290,67 +290,6 @@
 
 
   
-    <article id="post-c#" class="post-c# post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2020/08/19/c#/">C#学习</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2020/08/19/c#/" data-id="ckenxb6re000028ttowbtv04u" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <h1 id="基础语句"><a href="#基础语句" class="headerlink" title="基础语句"></a>基础语句</h1><p>Console.WriteLine()：打印输出<br>Console.ReadLine()：读取键入<br>Convert.ToDouble()：强制转换为double型</p>
-<h1 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h1><p>this是一个指针，当类被声明为对象后被托管在堆上，this指针就是指向这个堆以表示当前对象。通常使用this关键字来引用当前实例的成员。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class a&#123;</span><br><span class="line">	private string name;</span><br><span class="line">	public a (string name)&#123;</span><br><span class="line">		this.name = name;//this.name表示当前实例的成员，以与同名变量区别如果构造函数的变量名与要赋值的字段名不重名，则可以省略这个关键字</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="枚举、结构数组"><a href="#枚举、结构数组" class="headerlink" title="枚举、结构数组"></a>枚举、结构数组</h1><p>enum：枚举<br>struct：结构<br>数组：eg:int[] array = new int[5]</p>
-<h1 id="lambda表达式"><a href="#lambda表达式" class="headerlink" title="lambda表达式"></a>lambda表达式</h1><p>  =&gt;：左边是函数，右边是函数体</p>
-<h1 id="get和set的意义"><a href="#get和set的意义" class="headerlink" title="get和set的意义"></a>get和set的意义</h1><h1 id="细节问题"><a href="#细节问题" class="headerlink" title="细节问题"></a>细节问题</h1><ol>
-<li><p>Console.WriteLine()输出时如果包含已定义变量需要在前面加$<br>eg:Console.WriteLine($”{i}”, i++);其中i为int型变量</p>
-</li>
-<li><p>foreach的使用<br>eg:foreach(int i in array)</p>
-</li>
-<li><p>ref关键字和out关键字<br>ref:通过引用来传递参数,ref是通过给方法传递值类型的参数，直接操作同一个变量的关键字.<br>out:作为一个参数修饰符，允许通过引用而不是通过值将参数传递给方法.         </p>
-</li>
-<li><p>委托的使用</p>
-</li>
-<li><p>throw关键字生成异常<br>try…catch…finally处理异常</p>
-</li>
-<li><p>问题：StringFormat：文字格式的定义</p>
-<pre><code>DrawLine（）：绘制坐标轴参量的意义
-</code></pre></li>
-</ol>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2020/08/19/c#/">
-    <time datetime="2020-08-19T14:03:24.405Z" class="entry-date">
-        2020-08-19
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
     <article id="post-study_c#" class="post-study_c# post type-post status-publish format-standard hentry">
     <!---->
 
@@ -577,15 +516,15 @@
           </li>
         
           <li>
-            <a href="/2020/08/19/c#/">C#学习</a>
-          </li>
-        
-          <li>
             <a href="/2020/08/19/study_c#/">C#学习</a>
           </li>
         
           <li>
             <a href="/2019/01/07/first_blog/">利用Hexo搭一篇属于自己的博客</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/04/markdown/">Markdown学习</a>
           </li>
         
       </ul>
